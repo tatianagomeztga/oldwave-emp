@@ -1,0 +1,88 @@
+.reference
+  {
+    color: #772CE8; 
+  }
+
+  .recently
+  {    
+    font-size:19px;    
+    line-height:27px;
+    letter-spacing:5px;        
+    text-align: center;
+    font:normal normal medium 19px/29px Poppins;
+    letter-spacing: 0px;
+    color: #5c5e64; 
+    opacity: 100;
+  } 
+  
+  .size
+  {    
+    font-weight: bold;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.95;
+  }
+
+  .size14
+  {
+    font-size: 14px;
+  }
+
+  .format
+  {        
+    letter-spacing: 0px;
+    font-size: 13px;
+    text-transform: none! important;
+  }
+  
+  img
+  {
+    width: 200px;
+    height: 240px;    
+  }
+
+  .test
+  {          
+    border: 1px ;
+    width: 200px;
+    height: 59px;
+  }
+
+  .ver
+  {
+    text-decoration: line-through;
+  }
+
+  .align
+  {
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+  }
+
+  .setcolor
+  {
+      color:#772CE8;
+      font-weight: bold;
+  }
+   
+/*
+  .parent {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .image1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 1px red solid;
+  }
+  .image2 {
+    position: absolute;
+    top: -10px;
+    left: 130px;
+    border: 1px green solid;
+  }
+
+  */
