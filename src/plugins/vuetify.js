@@ -14,7 +14,7 @@ export default new Vuetify({
         info: "#2196F3",
         success: "#4CAF50",
         warning: "#FFC107",
-        lightblue: "#14c6FF",
+        lightblue: "#32D1F7",
         yellow: "#FFCF00",
         pink: "#FF1976",
         orange: "#FF8657",
