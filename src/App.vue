@@ -1,10 +1,18 @@
 <template>
-  <div id="app">
-    
-    <router-view/>
-  </div>
+  <v-app id="app">
+    <v-main>
+      <t-header></t-header>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
+<script>
+import header from "@/components/header.vue";
 
-</style>
+export default {
+  components: {
+    "t-header": header,
+  }
+};
+</script>
