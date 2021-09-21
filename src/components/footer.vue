@@ -1,6 +1,6 @@
 <template>
-  <v-footer >
-    <v-container >
+  <v-footer id="footer">
+    <v-container>
       <v-layout mt-2>
         <v-flex  >
           <v-img
@@ -83,6 +83,9 @@
   *{
     font-family: "Poppins, Regular";
     text-transform: none;
+  }
+  #footer{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
   }
   #ftitle{
     font-family: "Poppins, Bold";
