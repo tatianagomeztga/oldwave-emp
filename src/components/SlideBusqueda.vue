@@ -1,11 +1,11 @@
 
 <template>
   <v-sheet
-    class="mx-auto"
-    elevation="8"
+    class="ml-8 mr-8"
+    elevation="0"
   >
     <v-slide-group
-      class="pa-4"
+      class="pa-4 pt-0"
       show-arrows
       v-model="model"
     >
@@ -16,19 +16,27 @@
       >
       <v-container>
         <v-card
-        class="ma-4 card"
-        align="center"
-        justify="center"
-        height="120"
-        width="150"
-        @click="toggle">
-            <v-img
-            :src="image.src"
-            width="70"
-            height="60"
-            contain>
-            </v-img>
-            <v-card-title>{{ image.texto }}</v-card-title>
+          class="mt-4"
+          elevation="0"
+          id="card"
+          height= "144px"
+          align="center"
+          justify="center"
+          @click="toggle">
+            <v-btn
+              depressed
+              width= "107px"
+              height= "100px"
+              class="mb-0"
+              id="btncategory">
+              <v-img
+              :src="image.src"
+              width="73px"
+              height="41px"
+              contain>
+              </v-img>
+            </v-btn>
+            <v-card-title class="mt-0" id="txtcategory">{{ image.texto }}</v-card-title>
             <v-row
             class="fill-height"
             align="center"
@@ -42,9 +50,7 @@
                 ></v-icon>
                 </v-scale-transition>
             </v-row>
-          
         </v-card>
-        
       </v-container>
       
       </v-slide-item>
@@ -101,32 +107,35 @@
 
 
 <style>
-.theme--light.v-card {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #FFFFFF;
-    border-radius: 8px;
-    opacity: 1;
+@font-face {
+  font-family: "Poppins, Regular";
+  src: url("../assets/fonts/Poppins-Regular.ttf");
 }
-.v-sheet.v-card:not(.v-sheet--outlined) {
-    box-shadow: none !important;
-}
-.v-card__title {
-    
-    color: var(--unnamed-color-5c5e64);
-    text-align: left;
-    font: normal normal normal 13px/20px Poppins;
-    color: #5C5E64;
-    opacity: 1;
-    justify-content: center;
-    font-size: 0.9rem !important;
-    
-}
-.v-card__title:hover{
-  color: #772CE8;
-  font-weight: bold;
+*{
+  font-family: "Poppins, Regular";
+  text-transform: none;
 }
 
-.card{
+#txtcategory{
+  font-size: 13px;
+  color: #5C5E64;
+  justify-content: center;
+  padding-top: 0px;
+}
+#txtcategory:hover{
   color: #772CE8;
 }
+#card:hover{
+  color: #772CE8;
+}
+#btncategory{
+  background-color: white;
+}
+#btncategory:hover{
+  background-color: #FFF;
+  box-shadow: 1px 1px 6px #772CE8;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+}
+
 </style>
