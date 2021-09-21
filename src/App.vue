@@ -1,10 +1,25 @@
 <template>
-  <div id="app">
-    
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar>
+    </v-app-bar>
+
+    <v-main>
+      <h-slider></h-slider>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
+<script>
+  import slider from '@/components/slider.vue'
+export default {
+  name: 'App',
+  components: {
+    "h-slider": slider,
+  },
 
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>
