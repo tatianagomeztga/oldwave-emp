@@ -3,7 +3,11 @@ import Vuetify from 'vuetify/lib/framework';
 
 Vue.use(Vuetify);
 
+<<<<<<< HEAD
 export default new Vuetify({  
+=======
+export default new Vuetify({
+>>>>>>> feature/testmerge
     themes: {
       light: {
         primary: "#14C6FF",
@@ -19,7 +23,7 @@ export default new Vuetify({
         orange: "#FF8657",
         magenta: "#C33AFC",
         darkblue: "#1E2D56",
-        gray: "#3B3B3B",
+        gray: "#3B3B3B",        
         violet: "#772CE8",
         white2: "#F7F7F7",
         neutralgray: "#9BA6C1",
@@ -30,5 +34,10 @@ export default new Vuetify({
         lightpink: "#FFCFE3",
         white: "#FFFFFF"
       }
+<<<<<<< HEAD
     }  
+=======
+    }
+  
+>>>>>>> feature/testmerge
 });
