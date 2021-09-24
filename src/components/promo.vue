@@ -1,35 +1,25 @@
-<<<<<<< HEAD
 <template>
-  <v-app id="app">
-    <v-main>
-      <t-header fixed></t-header>
-      <router-view/>
-      <b-footer></b-footer>
-=======
-<template>  <v-app>
-    <v-main>
-      <router-view/>
-      <v-container>      
+  <v-container>      
         <v-row>
           <v-col md8>
-            <img src="./assets/img/banner-auxilar-ordenadores.png">          
-          </v-col>
-          <v-col  md2>
-            <img src="./assets/img/producto1.png">          
-          </v-col>
-          <v-col  md2>
-            <img src="./assets/img/producto2.png">          
-          </v-col>
+            <img class="pr-16" src="../assets/img/banner-auxilar-ordenadores.png">          
+          </v-col> 
+          <v-col md2>
+            <img src="../assets/img/producto1.png">          
+          </v-col> 
+          <v-col md2>
+            <img src="../assets/img/producto2.png">          
+          </v-col>          
         </v-row>
         <v-row mt-5>
           <v-col  md3>
-            <img src="./assets/img/producto3.png">          
+            <img src="../assets/img/producto3.png">          
           </v-col>
           <v-col  md3>
-            <img src="./assets/img/producto5.png">          
+            <img src="../assets/img/producto5.png">          
           </v-col>
           <v-col  md6>
-            <img src="./assets/img/banner-auxiliar-bicicletas.png">                                          
+            <img src="../assets/img/banner-auxiliar-bicicletas.png">                                          
           </v-col>
         </v-row> 
 
@@ -37,34 +27,24 @@
           <v-col  md12>
             <h3 class="recently">Productos más recientes</h3>        
           </v-col>          
-        </v-row>
-
-           <!--      
-        <v-layout>
-          <v-flex>             
-            <div class="parent">
-              <img class="image1" src="./assets/televisor.png"/>
-              <img class="image2" src="./assets/30descuento.png"/>
-            </div>                          
-          </v-flex>          
-        </v-layout>
-        -->    
+        </v-row>                       
+          
       <div class="box">
         <v-row mt-5>
           <v-col  md3>            
-            <img src="./assets/iphone11.png">  
+            <img class="tamanoProd" src="../assets/iphone11.png">  
           </v-col>  
           <v-col  md3>
-            <img src="./assets/televisorpanasonic.png">  
+            <img class="tamanoProd" src="../assets/televisorpanasonic.png">  
           </v-col>
            <v-col  md3>
-            <img src="./assets/samsungs5.png"> 
+            <img class="tamanoProd" src="../assets/samsungs5.png"> 
           </v-col>   
           <v-col  md3>
-            <img src="./assets/nike.png"> 
+            <img class="tamanoProd" src="../assets/nike.png"> 
           </v-col>
           <v-col  md3>
-            <img src="./assets/patines.png">
+            <img class="tamanoProd" src="../assets/patines.png">
           </v-col>
         </v-row> 
       </div>
@@ -178,34 +158,14 @@
             </v-col>
         </v-row>                   
       </v-container>
->>>>>>> feature/promo-lastproducts
-    </v-main>
-  </v-app>
 </template>
 
 <script>
-<<<<<<< HEAD
-import header from "@/components/header.vue";
-import footer from "@/components/footer.vue"
-
 export default {
-  components: {
-    "t-header": header,
-    "b-footer": footer, 
-  }
-};
-</script>
-=======
-export default {
-  name: 'App',
 
-  data: () => ({
-    //
-  }),
-};
+}
 </script>
 
-<style> 
-@import './assets/styles/test.css';
+<style>
+@import '../assets/styles/test.css';
 </style>
->>>>>>> feature/promo-lastproducts

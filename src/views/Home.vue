@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div>
     <h-slider></h-slider>
     <box-features></box-features>
@@ -10,11 +11,19 @@
 import slider from '@/components/slider.vue'
 import boxFeatures from "@/components/box-features.vue"
 import subscribe from "@/components/subscribe.vue"
+=======
+  <hello-world />
+</template>
+
+<script>
+  import HelloWorld from '../components/HelloWorld'
+>>>>>>> feature/promo-lastproducts
 
   export default {
     name: 'Home',
 
     components: {
+<<<<<<< HEAD
       "h-slider": slider,
       "box-features": boxFeatures,
       "subscribe": subscribe,
@@ -27,3 +36,9 @@ import subscribe from "@/components/subscribe.vue"
   margin: 0px;
 }
 </style>
+=======
+      HelloWorld,
+    },
+  }
+</script>
+>>>>>>> feature/promo-lastproducts

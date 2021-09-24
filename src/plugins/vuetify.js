@@ -4,6 +4,7 @@ import Vuetify from 'vuetify/lib/framework';
 Vue.use(Vuetify);
 
 export default new Vuetify({
+<<<<<<< HEAD
   theme: {
     themes: {
       light: {
@@ -33,4 +34,6 @@ export default new Vuetify({
       }
     }
   }
+=======
+>>>>>>> feature/promo-lastproducts
 });
