@@ -51,7 +51,7 @@
     </v-app-bar>
 
     <v-app-bar
-      color="violet"
+      color="#772CE8"
       height="66px"
       flat
       >
