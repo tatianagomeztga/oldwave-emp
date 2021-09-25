@@ -3,11 +3,7 @@ import Vuetify from 'vuetify/lib/framework';
 
 Vue.use(Vuetify);
 
-<<<<<<< HEAD
 export default new Vuetify({  
-=======
-export default new Vuetify({
->>>>>>> feature/testmerge
     themes: {
       light: {
         primary: "#14C6FF",
@@ -34,10 +30,6 @@ export default new Vuetify({
         lightpink: "#FFCFE3",
         white: "#FFFFFF"
       }
-<<<<<<< HEAD
+
     }  
-=======
-    }
-  
->>>>>>> feature/testmerge
 });
