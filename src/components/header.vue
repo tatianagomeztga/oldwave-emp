@@ -57,6 +57,7 @@
       >
       <div class="ml-10">
         <v-text-field
+          v-model="nameProduct"
           flat
           placeholder="Estoy buscando..."
           prepend-inner-icon="mdi-magnify"
@@ -93,6 +94,7 @@
         color="white"
         class="white--text mr-3"
         id="btnsearch"
+        @click="searchByName(nameProduct)"
       >
       Buscar
     </v-btn>
@@ -113,6 +115,25 @@
   </div>
   
 </template>
+<script>
+import axios from 'axios';
+export default {
+   data: () => ({
+     nameProduct:'',
+     urlBase:'http://3.143.212.203/api/v1/search?q=',
+     info:''
+    }),
+    methods:{
+    searchByName(name){  
+    axios
+      .get(this.urlBase+name)
+      .then(response => (this.info = response.data.items))
+      console.log(this.info)
+      }
+    }
+}
+</script>
+
 
 <style>
   @font-face {

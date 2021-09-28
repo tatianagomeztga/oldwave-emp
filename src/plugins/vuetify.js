@@ -3,7 +3,7 @@ import Vuetify from 'vuetify/lib/framework';
 
 Vue.use(Vuetify);
 
-export default new Vuetify({
+export default new Vuetify({  
     themes: {
       light: {
         primary: "#14C6FF",
@@ -30,6 +30,6 @@ export default new Vuetify({
         lightpink: "#FFCFE3",
         white: "#FFFFFF"
       }
-    }
-  
+
+    }  
 });
