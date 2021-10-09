@@ -1,4 +1,5 @@
 <template >
+<div>
   <v-card
     class="mx-auto my-15"
     max-width="50%"
@@ -39,6 +40,7 @@
 
   </v-row>
   </v-card>
+</div>
 </template> 
 
 <script>
