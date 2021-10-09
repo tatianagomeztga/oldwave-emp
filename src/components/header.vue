@@ -249,37 +249,29 @@
       Filtros
     </v-btn>
     </v-app-bar>
-  </div>
+    <!-- <img :src="info[0].thumbnail">    -->
+  </div>  
 </template>
 <script>
 import axios from 'axios';
 export default {
    data: () => ({
      nameProduct:'',
-     urlBase:'http://3.143.212.203/api/v1/search?q=',
-     info:''
+     urlBase:'https://d1eylshvb8atwe.cloudfront.net/api/v1/items?q=',
+     info:'',
+     dialog: false
     }),
     methods:{
     searchByName(name){  
     axios
       .get(this.urlBase+name)
       .then(response => (this.info = response.data.items))
-      console.log(this.info)
-      }
+      console.log(this.info[0].thumbnail)
+      }      
     }
 }
 </script>
 
-
-<script>
-  export default {
-    data () {
-      return {
-        dialog: false,
-      }
-    },
-  }
-</script>
 
 <style>
 @import '../assets/styles/test.css';
