@@ -59,20 +59,7 @@ export default {
         info:''
       }
     },  
-    created(){
-      
-      this.$root.$on('productByName', (name) => {
-        
-        this.setResults(name);
-        
-      })
-    },
-    methods:{
-      setResults(results){
-        this.info = results;
-        console.log(this.info);
-      },
-    }
+    
 }
 </script>
 

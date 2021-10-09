@@ -127,8 +127,8 @@ export default {
       
       searchByName(nameProduct){
         let name = this.searchApi(nameProduct);
-        if (this.$route.path !== '/ProductDetail'){
-          this.$router.push('ProductDetail');
+        if (this.$route.path !== '/ProductList'){
+          this.$router.push('ProductList');
         }
         
         this.$root.$emit("productByName", name);
