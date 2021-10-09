@@ -13,6 +13,7 @@ import boxFeatures from "@/components/box-features.vue"
 import promo from "@/components/promo.vue"
 import subscribe from "@/components/subscribe.vue"
 
+
   export default {
     name: 'Home',
 
@@ -23,6 +24,7 @@ import subscribe from "@/components/subscribe.vue"
       "promo": promo,
     },
   }
+  
 </script>
 <style>
 *{

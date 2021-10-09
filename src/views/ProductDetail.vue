@@ -17,7 +17,7 @@
     <v-row class="col-6">
       <v-container class="col-6">
           <h3>Nombre: </h3>
-          <v-sheet>{{ nombre }}</v-sheet>
+          <v-sheet>{{  }}</v-sheet>
       </v-container>
       <v-container class="col-6">
           <h3>Marca: </h3>
@@ -54,8 +54,25 @@ export default {
         reseller:[{nombre: 'nombre', Logo: 'logo'}],
         descripcion: 'Descripcion',
         rating: 'rating', 
+        nameProduct:'',
+        urlBase:'http://3.143.212.203/api/v1/search?q=',
+        info:''
       }
     },  
+    created(){
+      
+      this.$root.$on('productByName', (name) => {
+        
+        this.setResults(name);
+        
+      })
+    },
+    methods:{
+      setResults(results){
+        this.info = results;
+        console.log(this.info);
+      },
+    }
 }
 </script>
 

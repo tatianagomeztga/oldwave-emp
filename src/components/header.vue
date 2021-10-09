@@ -124,14 +124,45 @@ export default {
      info:''
     }),
     methods:{
-    searchByName(name){  
-    axios
-      .get(this.urlBase+name)
-      .then(response => (this.info = response.data.items))
-      console.log(this.info)
-      }
+      
+      searchByName(nameProduct){
+        let name = this.searchApi(nameProduct);
+        if (this.$route.path !== '/ProductDetail'){
+          this.$router.push('ProductDetail');
+        }
+        
+        this.$root.$emit("productByName", name);
+        
+      },
+      searchApi(name){  
+        axios
+          .get(this.urlBase+name)
+          .then(response => (this.info = response.data.items));
+
+          return this.info;
+          }
+        
+        }
+      
+      
     }
-}
+
+// import axios from 'axios';
+// export default {
+//    data: () => ({
+//      nameProduct:'',
+//      urlBase:'http://3.143.212.203/api/v1/search?q=',
+//      info:''
+//     }),
+//     methods:{
+//     searchByName(name){  
+//     axios
+//       .get(this.urlBase+name)
+//       .then(response => (this.info = response.data.items))
+//       console.log(this.info)
+//       }
+//     }
+// }
 </script>
 
 
