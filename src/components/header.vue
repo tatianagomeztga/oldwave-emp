@@ -249,15 +249,17 @@
       Filtros
     </v-btn>
     </v-app-bar>
-  </div>
+    <!-- <img :src="info[0].thumbnail">    -->
+  </div>  
 </template>
 <script>
 import axios from 'axios';
 export default {
    data: () => ({
      nameProduct:'',
-     urlBase:'http://3.143.212.203/api/v1/search?q=',
-     info:''
+     urlBase:'https://d1eylshvb8atwe.cloudfront.net/api/v1/items?q=',
+     info:'',
+     dialog: false
     }),
     methods:{
       
@@ -301,16 +303,6 @@ export default {
 // }
 </script>
 
-
-<script>
-  export default {
-    data () {
-      return {
-        dialog: false,
-      }
-    },
-  }
-</script>
 
 <style>
 @import '../assets/styles/test.css';

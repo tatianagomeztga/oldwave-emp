@@ -1,12 +1,12 @@
 
 <template>
 <div>
-     <v-navigation-drawer app v-cloak v-model="drawer" color="white">
-      <v-card
-      flat
-      tile
-      color="white"
-      >
+  <v-navigation-drawer app v-cloak color="white">
+    <v-card
+    flat
+    tile
+    color="white"
+    >
       <v-toolbar
         flat
         color="white"
@@ -15,7 +15,7 @@
       >
         <v-toolbar-title class="font-face black--text" >Filtros</v-toolbar-title>
       </v-toolbar>
-    <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
       <v-expansion-panels
       accordion
       dark
@@ -38,33 +38,10 @@
         </v-expansion-panel>
       </v-expansion-panels>
       
-      </v-card>
-    </v-navigation-drawer>
-    <v-card
-    class="mx-auto my-15"
-    max-width="50%"
-    max-height="90%"
-  >
-  <v-row>
-    <v-container class="col-6">
-      <v-img
-        class="white--text align-end"
-        height="350px"
-        width="100%"
-        src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-      >
-      </v-img>
-    </v-container>
-    <v-row class="col-6">
-      <v-container class="col-6">
-          <h3>Nombre: </h3>
-          <v-sheet>{{ info[0].blend }}</v-sheet>
-      </v-container>
-    </v-row>
-
-  </v-row>
-  </v-card>
-    </div>
+    </v-card>
+  </v-navigation-drawer>
+  
+</div>
 </template>
 
 <script>
