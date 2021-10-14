@@ -7,7 +7,6 @@
     <v-slide-group
       class="pa-4 pt-0"
       show-arrows
-      v-model="model"
     >
       <v-slide-item
         v-for="(image, n) in images"

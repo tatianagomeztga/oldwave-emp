@@ -1,7 +1,7 @@
 <template>
-  <div>
+<div>
     <h-slider></h-slider>
-    <promo></promo>
+    <l-filter></l-filter>
     <box-features></box-features>    
     <subscribe></subscribe>
   </div>
@@ -10,25 +10,22 @@
 <script>
 import slider from '@/components/slider.vue'
 import boxFeatures from "@/components/box-features.vue"
-import promo from "@/components/promo.vue"
 import subscribe from "@/components/subscribe.vue"
-
-
+import filter from "@/components/filter.vue"
   export default {
-    name: 'Home',
+    name: 'ProductList',
 
     components: {
       "h-slider": slider,
       "box-features": boxFeatures,
       "subscribe": subscribe,
-      "promo": promo,
+      "l-filter": filter,
     },
   }
-  
 </script>
 <style>
 *{
   padding: 0px;
   margin: 0px;
 }
-</style>
+</style> 

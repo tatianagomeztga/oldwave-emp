@@ -10,7 +10,7 @@
             ></v-img>
         </v-flex>  
         <v-flex>
-          <h3 id="ftitle" class="violet--text">old<b>wave</b></h3>
+          <h3 id="ftitle" class="reference">old<b>wave</b></h3>
           <v-layout class="interes"  mt-4>
             <v-flex >
               <h2  class="p2">¿Quienes somos?</h2>
@@ -19,7 +19,7 @@
           </v-layout>
         </v-flex>
         <v-flex>
-          <h3 id="ftitle" class="violet--text">Links de interés</h3>
+          <h3 id="ftitle" class="reference">Links de interés</h3>
           <v-layout class="interes"  mt-4>
             <v-flex>
               <h2  class="p2">Preguntas frecuentes</h2>
@@ -29,11 +29,11 @@
           </v-layout>
         </v-flex>
         <v-flex>
-          <h3 id="ftitle" class="violet--text">Contácto</h3>
+          <h3 id="ftitle" class="reference">Contácto</h3>
           <v-layout class="contacto"  mt-3>
             <p class="p1" >servicioalcliente@oldwave.co <br> Telefono: 316 1924</p>
           </v-layout>
-          <h3 id="ftitle" class="violet--text" >Redes Sociales</h3>
+          <h3 id="ftitle" class="reference" >Redes Sociales</h3>
           <v-layout class="contacto mt-2" >
             <v-btn 
               fab
@@ -102,5 +102,5 @@
     font-size:14px;
     font-weight: normal;
   }
- 
+@import '../assets/styles/test.css';
 </style>
