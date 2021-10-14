@@ -259,48 +259,47 @@ export default {
      nameProduct:'',
      urlBase:'https://d1eylshvb8atwe.cloudfront.net/api/v1/items?q=',
      info:'',
-     dialog: false
+     dialog: false,
+     bandera: true
     }),
     methods:{
       
-      searchByName(nameProduct){
-        let name = this.searchApi(nameProduct);
-        if (this.$route.path !== '/ProductList'){
-          this.$router.push('ProductList');
+      async searchByName(nameProduct){
+        let name = await this.searchApi(nameProduct);
+        if(nameProduct !== ''){
+          if(name.length !== 0){
+            if(this.bandera){
+              this.bandera = false;
+              this.searchByName(nameProduct)
+            }
+          
+            if (this.$route.path !== '/ProductList'){
+              this.$router.push('ProductList');
+            }
+            
+            this.$root.$emit("productByName", name);
+          }
+          else{
+            alert('producto no existente')
+          }
+          
+        }
+        else{
+          alert('Ingrese un producto')
         }
         
-        this.$root.$emit("productByName", name);
-        
       },
-      searchApi(name){  
-        axios
-          .get(this.urlBase+name)
-          .then(response => (this.info = response.data.items));
-
-          return this.info;
-          }
+      async searchApi(name){  
+        let response=await axios.get(this.urlBase+name)
+        this.info=response.data.items
+        return this.info
+        }
         
         }
       
       
     }
 
-// import axios from 'axios';
-// export default {
-//    data: () => ({
-//      nameProduct:'',
-//      urlBase:'http://3.143.212.203/api/v1/search?q=',
-//      info:''
-//     }),
-//     methods:{
-//     searchByName(name){  
-//     axios
-//       .get(this.urlBase+name)
-//       .then(response => (this.info = response.data.items))
-//       console.log(this.info)
-//       }
-//     }
-// }
 </script>
 
 
