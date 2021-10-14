@@ -258,44 +258,60 @@ export default {
    data: () => ({
      nameProduct:'',
      urlBase:'https://d1eylshvb8atwe.cloudfront.net/api/v1/items?q=',
+     urlBase2: 'http://54.183.179.149:8080/api/search?q=',
      info:'',
-     dialog: false
+     dialog: false,
+     bandera: true
     }),
     methods:{
       
       async searchByName(nameProduct){
-        let name = await this.searchApi(nameProduct);
-        if (this.$route.path !== '/ProductList'){
-          this.$router.push('ProductList');
-        }        
-        this.$root.$emit("productByName", name);        
+        let nam = await this.searchApi(nameProduct, 'urlBase');
+        let name2 = await this.searchApi(nameProduct, 'urlBase2');
+        
+        if(nameProduct !== ''){
+          if(nam.length !== 0 || name2.length !== 0){
+            if(this.bandera){
+              this.bandera = false;
+              this.searchByName(nameProduct)
+            }
+            let name = nam.concat(name2);
+            
+            if (this.$route.path !== '/ProductList'){
+              this.$router.push('ProductList');
+            }
+            
+            this.$root.$emit("productByName", name);
+          }
+          else{
+            alert('producto no existente')
+          }
+          
+        }
+        else{
+          alert('Ingrese un producto')
+        }
+        
       },
+      async searchApi(name, url){  
+        let response;
+        if(url === 'urlBase'){
+          response = await axios.get(this.urlBase+name);
+        }
+        else{
+          response = await axios.get(this.urlBase2+name);
+        }
+        
+        this.info=response.data.items;
+        
+        return this.info;
+        }
+        
+        }
       
-      async searchApi(name){  
-        axios
-          .get(this.urlBase+name)
-          .then(response => (this.info = response.data.items));
-          return this.info;
-          }        
-        }            
+      
     }
 
-// import axios from 'axios';
-// export default {
-//    data: () => ({
-//      nameProduct:'',
-//      urlBase:'http://3.143.212.203/api/v1/search?q=',
-//      info:''
-//     }),
-//     methods:{
-//     searchByName(name){  
-//     axios
-//       .get(this.urlBase+name)
-//       .then(response => (this.info = response.data.items))
-//       console.log(this.info)
-//       }
-//     }
-// }
 </script>
 
 
