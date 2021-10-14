@@ -29,7 +29,8 @@
           </v-container>
           <v-container class="col-6">
               <h3>Ciudad: </h3>
-              <v-sheet>{{  }}</v-sheet>
+              <v-sheet v-if="inf.city != null">{{ inf.city.name }}</v-sheet>
+              <v-sheet v-else> No registrada </v-sheet>
           </v-container>
           <v-container class="col-6">
               <h3>Precio: </h3>
@@ -40,8 +41,6 @@
               <v-sheet>{{ inf.rating }}</v-sheet>
           </v-container>
           <v-container class="col-6">
-              <h3>Descripción: </h3>
-              <v-sheet>{{ inf.description }}</v-sheet>
           </v-container>
           <v-container class = "col-12">
             <v-btn
