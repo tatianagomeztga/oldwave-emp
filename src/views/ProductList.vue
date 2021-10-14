@@ -24,7 +24,7 @@
         <v-row class="col-6">
           <v-container class="col-6">
               <h3>Id: </h3>
-              <v-sheet>{{inf.id }}</v-sheet>
+              <v-sheet name="id">{{inf.id }}</v-sheet>
           </v-container>
           <v-container class="col-6">
               <h3>Nombre: </h3>
@@ -45,13 +45,17 @@
           <v-container class="col-6">
               <h3>Rating: </h3>
               <v-sheet>{{ inf.rating }}</v-sheet>
-          </v-container>
-          <v-container class="col-12">
-              <h3>Descripción: </h3>
-              <v-sheet>{{ inf.description }}</v-sheet>
-          </v-container>
+          </v-container>                  
+          <v-btn
+              outlined
+              rounded
+              depressed                            
+              id="btnsearch"
+              @click="searchByName(inf.id)"
+            >
+            Ver Detalle
+          </v-btn>          
         </v-row>
-
       </v-row>
       </v-card>
     </div>
@@ -68,16 +72,19 @@ export default {
     },
     created(){
       
-      this.$root.$on('productByName', (name) => {
-        
-        this.setResults(name);
-        
+      this.$root.$on('productByName', (name) => {        
+        this.setResults(name);        
       })
     },
     methods:{
+      searchByName(nameProduct){                     
+        if (this.$route.path !== '/ProductDetail'){
+          this.$router.push('ProductDetail');
+        }        
+        this.$root.$emit("productid", nameProduct);        
+      },
       setResults(results){
-        this.info = results;
-        console.log(this.info);
+        this.info = results;        
       },
     },
     components:{

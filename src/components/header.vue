@@ -263,26 +263,21 @@ export default {
     }),
     methods:{
       
-      searchByName(nameProduct){
-        let name = this.searchApi(nameProduct);
+      async searchByName(nameProduct){
+        let name = await this.searchApi(nameProduct);
         if (this.$route.path !== '/ProductList'){
           this.$router.push('ProductList');
-        }
-        
-        this.$root.$emit("productByName", name);
-        
+        }        
+        this.$root.$emit("productByName", name);        
       },
-      searchApi(name){  
+      
+      async searchApi(name){  
         axios
           .get(this.urlBase+name)
           .then(response => (this.info = response.data.items));
-
           return this.info;
-          }
-        
-        }
-      
-      
+          }        
+        }            
     }
 
 // import axios from 'axios';
