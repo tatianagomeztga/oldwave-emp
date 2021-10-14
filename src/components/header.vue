@@ -258,6 +258,7 @@ export default {
    data: () => ({
      nameProduct:'',
      urlBase:'https://d1eylshvb8atwe.cloudfront.net/api/v1/items?q=',
+     urlBase2: 'http://54.183.179.149:8080/api/search?q=',
      info:'',
      dialog: false,
      bandera: true
@@ -265,14 +266,17 @@ export default {
     methods:{
       
       async searchByName(nameProduct){
-        let name = await this.searchApi(nameProduct);
+        let nam = await this.searchApi(nameProduct, 'urlBase');
+        let name2 = await this.searchApi(nameProduct, 'urlBase2');
+        
         if(nameProduct !== ''){
-          if(name.length !== 0){
+          if(nam.length !== 0 || name2.length !== 0){
             if(this.bandera){
               this.bandera = false;
               this.searchByName(nameProduct)
             }
-          
+            let name = nam.concat(name2);
+            
             if (this.$route.path !== '/ProductList'){
               this.$router.push('ProductList');
             }
@@ -289,10 +293,18 @@ export default {
         }
         
       },
-      async searchApi(name){  
-        let response=await axios.get(this.urlBase+name)
-        this.info=response.data.items
-        return this.info
+      async searchApi(name, url){  
+        let response;
+        if(url === 'urlBase'){
+          response = await axios.get(this.urlBase+name);
+        }
+        else{
+          response = await axios.get(this.urlBase2+name);
+        }
+        
+        this.info=response.data.items;
+        
+        return this.info;
         }
         
         }
