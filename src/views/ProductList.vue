@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row v-if="isResult" name="productsList">
     <div class="col-12">
       <v-card
         v-for="(inf,i) in info"
@@ -47,7 +47,7 @@
               outlined
               rounded
               depressed
-              id="btnsearch"
+              name="btnDetails"
               @click="searchByName(nameProduct)"
             >
               Ver detalle
@@ -60,13 +60,21 @@
       </v-card>
     </div>
   </v-row>
+  <v-row v-else name="noResults">
+    <div class="col-12" id="noResults">
+      <h3>
+        No se encontraron resultados.
+      </h3>
+    </div>
+  </v-row>
 </template>
 
 <script>
 export default {
     data () {
       return {
-        info:''
+        info:'',
+        isResult: true
       }
     },
     created(){
@@ -82,7 +90,14 @@ export default {
         this.$root.$emit("productid", nameProduct);        
       },
       setResults(results){
-        this.info = results;
+        console.log(results[0].price != 0)
+        if(results[0].price != 0){
+          this.info = results;
+          this.isResult = true;
+        }else{
+          this.isResult = false;
+        }
+        
       },
     },
 }
@@ -92,5 +107,11 @@ export default {
 .image{
   width: 300px;
   height: 350px;
+}
+#noResults{
+  height: 200px;
+  margin-top: 100px;
+  color: #772CE8;
+  text-align: center;
 }
 </style>

@@ -8,6 +8,7 @@
       >
       <div class="d-flex align-center">
         <v-img
+          name="oldwave-logo"
           alt="oldwave logo"
           class="shrink mr-2"
           contain
@@ -58,6 +59,7 @@
       <div class="ml-10">
         <v-text-field
           v-model="nameProduct"
+          name="searchBar"
           flat
           placeholder="Estoy buscando..."
           prepend-inner-icon="mdi-magnify"
@@ -89,11 +91,12 @@
       </v-btn>
   <div class="text-center">
     <v-dialog
-      v-model="dialog"      
+      id="dialog"
+      v-model="dialog"     
       width="1200"       
     >     
     <div>              
-      <v-card>      
+      <v-card id="allCategories">      
         <v-card-text>
           <v-row>
             <v-col class="px-10 mt-5" cols="3">                      
@@ -231,6 +234,7 @@
         color="white"
         class="white--text mr-3"
         id="btnsearch"
+        name="searchBtn"
         @click="searchByName(nameProduct)"
       >
       Buscar
