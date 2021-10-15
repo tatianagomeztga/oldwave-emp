@@ -17,7 +17,7 @@
     </v-container>
     <v-row class="col-6">
       <v-container class="col-6">
-          <h3>Nombre: </h3>
+          <h3>Nombre: {{respuesta.name}}</h3>
           <v-sheet>{{  }}</v-sheet>
       </v-container>
       <v-container class="col-6">
@@ -37,13 +37,13 @@
           <v-sheet>{{ descripcion }}</v-sheet>
       </v-container>
     </v-row>
-
   </v-row>
-  </v-card>
+  </v-card>  
 </div>
 </template> 
 
 <script>
+import axios from 'axios';
 export default {
     name: 'ProductDetail',
     data () {
@@ -57,14 +57,34 @@ export default {
         descripcion: 'Descripcion',
         rating: 'rating', 
         nameProduct:'',
-        urlBase:'http://3.143.212.203/api/v1/search?q=',
-        info:''
+        urlBase:'https://d1eylshvb8atwe.cloudfront.net/api/v1/items/',
+        info:'',
+        respuesta:''        
       }
+    }, 
+    created(){
+      
+      this.$root.$on('productid', (id) => {        
+        this.setResults(id);                      
+      })
     },  
-    
+    methods: 
+    {
+      async setResults(results){
+        this.info = results; 
+        console.log("entre"+ this.info)  
+        this.searchApiById(results)                           
+      },      
+      async searchApiById(name){  
+        axios
+          .get(this.urlBase+name)
+          .then(response => (this.respuesta = response.data));
+          console.log(this.respuesta.name)           
+          return this.respuesta;
+          }
+    }
 }
 </script>
-
 <style>
 
 </style>

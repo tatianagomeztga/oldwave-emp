@@ -75,6 +75,12 @@ export default {
       })
     },
     methods:{
+      searchByName(nameProduct){                     
+        if (this.$route.path !== '/ProductDetail'){
+          this.$router.push('ProductDetail');
+        }        
+        this.$root.$emit("productid", nameProduct);        
+      },
       setResults(results){
         this.info = results;
       },
