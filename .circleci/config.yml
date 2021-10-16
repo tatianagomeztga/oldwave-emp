@@ -29,6 +29,9 @@ jobs:
       - run: npm install && npm run build
       - run: aws s3 sync ./dist s3://developvue
       - run: 
+          name: install cypress 
+          command: npm install cypress
+      - run: 
           name: Run E2E tests
           command: npm run cypress:run
       
