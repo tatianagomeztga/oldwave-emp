@@ -30,12 +30,10 @@
           </v-container>
           <v-container class="col-6">
               <h3>Ciudad: </h3>
-<<<<<<< HEAD
+
               <v-sheet v-if="inf.city != null">{{ inf.city.name }}</v-sheet>
               <v-sheet v-else> No registrada </v-sheet>
-=======
-              <v-sheet>{{inf.city.name}}</v-sheet>
->>>>>>> develop
+
           </v-container>
           <v-container class="col-6">
               <h3>Precio: </h3>
@@ -44,15 +42,12 @@
           <v-container style="align:'left' justify:'left'">
               <h3>Rating: </h3>
               <v-sheet>{{ inf.rating }}</v-sheet>
-<<<<<<< HEAD
-          </v-container>
-          <v-container class="col-6">
-          </v-container>
-=======
-          </v-container>          
->>>>>>> develop
+
+          </v-container>                   
+
           <v-container class = "col-12">
             <v-btn
+              style="color:#772CE8"                           
               outlined
               rounded
               depressed
