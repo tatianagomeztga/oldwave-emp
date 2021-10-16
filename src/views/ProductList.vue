@@ -71,66 +71,71 @@
     </v-row>
 
   <v-dialog v-model="test" max-width="500">
-          <v-card>
-            <v-card-title>
-            Detalle
-            </v-card-title>
-            <v-card-text >
-            <v-row  class="pl-7">      
-              <v-img                            
-                max-width="400"
-                class="white--text align-end"              
-                :src="detail.thumbnail"              
-              >
-              </v-img>
-            </v-row>                    
-            <v-row  class="pl-12">
-              <h3 >Nombre: </h3>&nbsp;&nbsp;
-              <v-sheet>{{ detail.name }}</v-sheet>          
-            </v-row>
+    <v-card name="productDetailD">
+      <v-card-title class="white--text" style="background-color: #772CE8;">
+        <b>Detalle del producto</b>
+      </v-card-title>
+      <v-card-text class="mt-4">
+        <v-row  class="pl-7">
+          <v-img                            
+            max-width="400"
+            class="white--text align-end"              
+            :src="detail.thumbnail"              
+          >
+          </v-img>
+        </v-row>                    
+        <v-row  class="pl-12">
+          <h3 >Nombre: </h3>&nbsp;&nbsp;
+          <v-sheet>{{ detail.name }}</v-sheet>          
+        </v-row>
             
-            <v-row class="pl-12">
-              <h3>Marca: </h3>&nbsp;&nbsp;
-              <v-sheet>{{ detail.brand }}</v-sheet>
-            </v-row>
+        <v-row class="pl-12">
+          <h3>Marca: </h3>&nbsp;&nbsp;
+          <v-sheet>{{ detail.brand }}</v-sheet>
+        </v-row>
             
-            <v-row class="pl-12">
-            <h3>Ciudad: </h3>&nbsp;&nbsp;
-              <v-sheet>{{ciudad}}</v-sheet>
-            </v-row>                    
-            <v-row class="pl-12">
-              <h3>Precio: </h3>&nbsp;&nbsp;
-              <v-sheet>${{ detail.price }}</v-sheet>
-            </v-row>                             
-            <v-row class="pl-12">
-                <h3>Descripción: </h3>&nbsp;&nbsp;
-                <v-sheet>{{ detail.description}}</v-sheet>
-            </v-row>       
-                <br>    
-                <v-row align="left" justify="center"> 
-                  <v-card-actions>
-                    <v-spacer></v-spacer>                  
-                    <v-btn
-                    color="#772CE8"
-                    outlined
-                    rounded
-                    depressed
-                    id="btnsearch"
-                    @click="addToCar(inf)"
-                  >
-                    Añadir al Carrito
-                  </v-btn> 
-                    <v-btn 
-                    color="#772CE8" @click="test=false" 
-                    outlined
-                    rounded
-                    depressed>Cerrar</v-btn>
-                  </v-card-actions>
-                  </v-row>
-          </v-card-text>
-          </v-card>
-        </v-dialog>  
-  </div>
+        <v-row class="pl-12">
+          <h3>Ciudad: </h3>&nbsp;&nbsp;
+          <v-sheet>{{ciudad}}</v-sheet>
+        </v-row>                    
+        <v-row class="pl-12">
+          <h3>Precio: </h3>&nbsp;&nbsp;
+          <v-sheet>${{ detail.price }}</v-sheet>
+        </v-row>                             
+        <v-row class="pl-12">
+          <h3>Descripción: </h3>&nbsp;&nbsp;
+          <v-sheet>{{ detail.description}}</v-sheet>
+        </v-row>   
+        <br>
+        <v-divider></v-divider>
+        <v-row align="center" justify="center" class="mt-2"> 
+          <v-card-actions>
+            <v-spacer></v-spacer>                  
+            <v-btn
+              color="#772CE8"
+              depressed
+              outlined
+              rounded
+              id="btnsearch"
+              class="violet--text"
+              @click="addToCar(inf)"
+            >
+              Agregar al Carrito
+            </v-btn> 
+            <v-btn
+              color="#772CE8"
+              depressed
+              outlined
+              rounded
+              @click="test=false" 
+              class="violet--text"
+              >Cerrar</v-btn>
+          </v-card-actions>
+        </v-row>
+      </v-card-text>
+    </v-card>
+  </v-dialog>
+</div>
 </template>
 
 <script>

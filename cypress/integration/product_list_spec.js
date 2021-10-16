@@ -20,5 +20,19 @@ describe('Products List view', () => {
     cy.contains('Buscar').click({force: true})
     cy.contains('Ver detalle').click()
   })
+  it('See product detail', () => {
+    cy.get('input[name="searchBar"]').type('televisor')
+    cy.contains('Buscar').click({force: true})
+    cy.contains('Ver detalle').click()
+    cy.get('div[name="productDetailD"]').isVisible()
+  })
+  it('Add to shopping cart', () => {
+    cy.get('input[name="searchBar"]').type('televisor')
+    cy.contains('Buscar').click({force: true})
+    cy.contains('Ver detalle').click()
+    cy.get('div[name="productDetailD"]').isVisible()
+    cy.contains('Agregar al Carrito').click()
+  })
+
 
 })

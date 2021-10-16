@@ -7,7 +7,8 @@
       height="66px"
       >
       <div class="d-flex align-center">
-        <v-img
+        <a href="/">
+          <v-img
           name="oldwave-logo"
           alt="oldwave logo"
           class="shrink mr-2"
@@ -15,6 +16,7 @@
           src="../assets/logo/oldwave-logo-horizontal.png"
           transition="scale-transition"
           height="40px"/>
+        </a>
       </div>
       <v-spacer></v-spacer>
       <div class="d-flex align-center mr-10">
